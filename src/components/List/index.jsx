@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MdDelete, MdEdit } from 'react-icons/md';
+import { MdDelete } from 'react-icons/md';
+
+import './styles.css'
 
 const List = ({ todos, onToggle, onRemove, updateTask }) => {
   return (
@@ -16,13 +18,6 @@ const List = ({ todos, onToggle, onRemove, updateTask }) => {
           >
             {todo.title}
           </span>
-          <button
-            className="update"
-            type="button"
-            onClick={() => updateTask(todo)}
-          >
-            <MdEdit size={28} />
-          </button>
           <button
             className="remove"
             type="button"
@@ -45,8 +40,7 @@ List.propTypes = {
       checked: PropTypes.bool.isRequired,
     })
   ).isRequired,
-  onTogle: PropTypes.func.isRequired,
+  onTogle: PropTypes.func,
   onRemove: PropTypes.func.isRequired,
-  updateTask: PropTypes.func.isRequired,
 };
 export default List;

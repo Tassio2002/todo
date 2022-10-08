@@ -24,7 +24,6 @@ const App = () => {
         obj.id === todo.id ? { ...obj, checked: !todo.checked } : obj
       )
     );
-    console.log(todo);
   };
 
   const onRemove = (todo) => {
